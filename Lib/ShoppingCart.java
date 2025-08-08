@@ -74,7 +74,11 @@ public class ShoppingCart {
      * @throws  InvalidOperationException เมื่อเราหาสินค้าไม่เจอ
      */
     public void removeItem(String productId)throws InvalidOperationException {
-        if (productId == null) return;
+        if (productId == null){
+            throw new RuntimeException("Not found Product ID");
+        } 
+        
+        
         CartItem itemToRemove = null;
         for (CartItem item : items) {
             if (item.getProduct().getProductId().equals(productId)) {
