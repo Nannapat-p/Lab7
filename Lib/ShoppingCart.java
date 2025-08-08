@@ -50,6 +50,7 @@ public class ShoppingCart {
      * หากมีสินค้าชนิดเดียวกันอยู่แล้ว จะเพิ่มจำนวนเข้าไป
      * @param productId รหัสของสินค้า
      * @param quantity จำนวนที่ต้องการเพิ่ม (ต้องมากกว่า 0)
+     * @throws  ProductNotFoundException เมื่อหาสินค้าไม่เจอ
      */
     public void addItem(String productId, int quantity)throws ProductNotFoundException {
         Product p = productCatalog.findById(productId);
@@ -68,6 +69,7 @@ public class ShoppingCart {
     /**
      * ลบสินค้า (ทั้งรายการ) ออกจากตะกร้า
      * @param productId รหัสของสินค้าที่ต้องการลบ
+     * @throws  InvalidOperationException เมื่อเราหาสินค้าไม่เจอ
      */
     public void removeItem(String productId)throws InvalidOperationException {
         if (productId == null) return;

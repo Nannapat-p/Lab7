@@ -43,6 +43,7 @@ public class ProductCatalog {
      * ค้นหาสินค้าจากรหัสสินค้า
      * @param productId รหัสสินค้าที่ต้องการค้นหา
      * @return อ็อบเจกต์ Product หากพบ, หรือ null หากไม่พบ
+     * @throws ProductNotFoundException   เมื่อหาสินค้าไม่เจอ
      */
     public Product findById(String productId) throws ProductNotFoundException {
         for (Product p : products) {
