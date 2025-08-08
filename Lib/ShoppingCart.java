@@ -54,7 +54,9 @@ public class ShoppingCart {
      */
     public void addItem(String productId, int quantity)throws ProductNotFoundException {
         Product p = productCatalog.findById(productId);
-       
+        if (quantity <= 0) {
+            throw new RuntimeException("Quantity must be positive");
+        }
         for (CartItem item : items) {
             if (item.getProduct().equals(p)) {
                 item.increaseQuantity(quantity);
