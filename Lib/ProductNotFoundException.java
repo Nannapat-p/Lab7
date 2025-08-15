@@ -1,7 +1,5 @@
 package Lib;
 
-
-
 /**
  * จะโยน Exception ออกไปเมื่อหาสินค้าไม่เจอใน ID
  */
@@ -10,3 +8,4 @@ public class ProductNotFoundException extends Exception {
         super(message);
     }
 }
+
